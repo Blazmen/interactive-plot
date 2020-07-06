@@ -3,15 +3,14 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-import plotly
 import plotly.graph_objects as go
 
 import pandas as pd
 import numpy as np
 
-import webbrowser
-
-web.open_new_tab("http://127.0.0.1:8050/")
+import flask
+import os
+from random import randint
 
 ######################dataset
 dataset = pd.read_csv("D_mel_atlas.csv")
@@ -28,8 +27,10 @@ for x in range(6):
 
 
 ######################app
+server = flask.Flask("Ploting")
+server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash("Ploting", external_stylesheets=external_stylesheets)
+app = dash.Dash("Ploting", external_stylesheets=external_stylesheets, server=server)
 
 app.layout = html.Div(style={"text-align": "center"}, children=[
     html.Div([
@@ -162,5 +163,5 @@ def update_output(n_clicks):
         return {"text-align": "left", "padding": "20", "width": 1200, "display": "none"}
 
 ###END###
-app.run_server(host='0.0.0.0', port=8050, debug=False)
+app.server.run(debug=False, threaded=True)
 #how to: run the script from the terminal ($ python interactive_plots.py) and go to localhost:8050 in your browser

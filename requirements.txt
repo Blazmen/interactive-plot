@@ -1,3 +1,5 @@
+os
+flask
 pandas
 numpy
 plotly

@@ -1,1 +1,1 @@
-worker: python interactive_plot.py
+web: gunicorn interactive_plots:server --timeout 300
