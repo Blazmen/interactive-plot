@@ -146,9 +146,9 @@ def update_graph(timepoint, contrast, gene, size):
                           xaxis=dict(range=[0, 440]),
                           yaxis=dict(range=[0, 160]),
                           zaxis=dict(range=[0, 160]),
-                          xaxis_title="Anterior-Posterior Axis",
-                          zaxis_title="Dorso-Ventral Axis",
-                          yaxis_title="Left-Right Axis")
+                          xaxis_title="Anterior-Posterior Axis (um)",
+                          zaxis_title="Dorso-Ventral Axis (um)",
+                          yaxis_title="Left-Right Axis (um)")
                       )
     return fig
 
