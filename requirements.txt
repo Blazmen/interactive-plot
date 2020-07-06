@@ -1,6 +1,8 @@
-os
-flask
+gunicorn
 pandas
 numpy
 plotly
 dash
+dash-renderer
+dash-html-components
+dash-core-components
