@@ -1,5 +1,5 @@
-pandas.py
-numpy.py
-plotly.py
-dash.py
+pandas.py==1.0.5
+numpy.py==1.19.0
+plotly.py=4.8.2
+dash.py==1.13.4
 webbrowser.py
