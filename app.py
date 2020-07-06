@@ -130,7 +130,7 @@ def update_graph(timepoint, contrast, gene, size):
             mode='markers',
             visible=True,
             marker=dict(color=dataset[f"{gene}__{timepoint}"],
-                        colorbar=dict(title="Colorscale"),
+                        colorbar=dict(title="Relative Gene Expression"),
                         colorscale="blues",
                         cmin=contrast[0],
                         cmax=contrast[1],
